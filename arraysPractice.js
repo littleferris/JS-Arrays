@@ -161,6 +161,9 @@ function removeItem (myGroceryList, itemToRemove ) {
 }
 
 function addItem(myGroceryList, item) {
+  if (!Array. isArray(myGroceryList)) {
+    return [];
+  }
   myGroceryList.push(item);
   return myGroceryList;
 }//Code Here
@@ -181,7 +184,11 @@ function addItem(myGroceryList, item) {
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
   function maker () {
-
+    var arr = [];
+    for (var i = 1; i <= 215; i++) {
+      arr.push(i);
+    }
+    return arr;
   }//Code Here
 
 
@@ -347,30 +354,26 @@ following properties. name, email, password, username.*/
 // };
 
 //Your Code Here
-var users = []//Create an empty array called users.
-
-
-var user1 = {
+var users = [//Create an empty array called users
+  {
   name: 'Tyler McGinnis',
   email: 'tylermcginnis33@gmail.com',
   password: 'iLoveJavaScript',
   username: 'infiniateLoop'
-};
-
-var user2 = {
+  },
+  {
   name: 'Mark Ferris',
-  email: 'tylermcginnis33@gmail.com',
-  password: 'iHateJavaScript',
+  email: 'tylermcginnis353@gmail.com',
+  password: 'JavaScript',
   username: 'ferris'
-};
-
-var user3 = {
+  },
+  {
   name: 'John Cena',
-  email: 'tylermcginnis33@gmail.com',
+  email: 'cena@gmail.com',
   password: 'iHeartJavaScript',
   username: 'Cena'
-};
-
+  }
+]
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -380,6 +383,11 @@ and those objects contain properties about the specific person you follow.*/
 objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
 Once you find the particular index he's located in, delete him from the array.*/
 
-  //Code Here
+for (var i = 0; i < users.length; i++) {
+  if (users[i].email === 'tylermcginnis33@gmail.com') {
+    users.splice(i, 1);
+  }
+
+} //Code Here
 
 //The activity we just did is very much how data works in 'the real world'.
