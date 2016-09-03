@@ -150,9 +150,24 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
    When this happens, you will need to respond by returning an empty array.
 */
 
-  function removeItem (myGroceryList ) {
+function removeItem (myGroceryList, itemToRemove ) {
+  if (!Array.isArray (myGroceryList)) {
+    return [];
+  }
+  if (myGroceryList.indexOf(itemToRemove) > -1) {
+    myGroceryList.splice(itemToRemove, 1)
+  }
+  return myGroceryList;
+}
 
-  }//Code Here
+function addItem(myGroceryList, item) {
+  myGroceryList.push(item);
+  return myGroceryList;
+}//Code Here
+  // var sickEmployee = devMountainEmployees.indexOf('Cahlan');
+  // if (sickEmployee != -1) {
+  //   devMountainEmployees.splice(sickEmployee, 1);
+  // }
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -319,7 +334,6 @@ var data = [
 of Data is to have an Array full of objects. */
 
   //Code Here
-  var users = []//Create an empty array called users.
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -333,28 +347,30 @@ following properties. name, email, password, username.*/
 // };
 
 //Your Code Here
-users = {
-  var user1 = {
-    name: 'Tyler McGinnis',
-    email: 'tylermcginnis33@gmail.com',
-    password: 'iLoveJavaScript',
-    username: 'infiniateLoop'
-  };
+var users = []//Create an empty array called users.
 
-  var user2 = {
-    name: 'Mark Ferris',
-    email: 'tylermcginnis33@gmail.com',
-    password: 'iHateJavaScript',
-    username: 'ferris'
-  };
 
-  var user3 = {
-    name: 'John Cena',
-    email: 'tylermcginnis33@gmail.com',
-    password: 'iHeartJavaScript',
-    username: 'Cena'
-  };
-}
+var user1 = {
+  name: 'Tyler McGinnis',
+  email: 'tylermcginnis33@gmail.com',
+  password: 'iLoveJavaScript',
+  username: 'infiniateLoop'
+};
+
+var user2 = {
+  name: 'Mark Ferris',
+  email: 'tylermcginnis33@gmail.com',
+  password: 'iHateJavaScript',
+  username: 'ferris'
+};
+
+var user3 = {
+  name: 'John Cena',
+  email: 'tylermcginnis33@gmail.com',
+  password: 'iHeartJavaScript',
+  username: 'Cena'
+};
+
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
